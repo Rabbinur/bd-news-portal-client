@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import useTitle from "../../../Hooks/UseTitle";
 const Login = () => {
   //for  input password error setup
   const [error, setError] = useState("");
@@ -11,7 +12,7 @@ const Login = () => {
   const { signIn, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
+  useTitle("Login");
   const from = location.state?.from?.pathname || "/";
 
   const handleSignIn = (event) => {

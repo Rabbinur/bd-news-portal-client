@@ -1,10 +1,11 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/UseTitle";
 import NewsCard from "../Shared/NewsCard/NewsCard";
 
 const Category = () => {
   const categoryNews = useLoaderData();
-
+  useTitle("Category");
   return (
     <div>
       <h2>this is category has news: {categoryNews.length} </h2>
